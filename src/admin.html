@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Biblioteca Euganeo - Dashboard</title>
+
+   <link rel="stylesheet" href="./style/admin/adm.css">
+   <link rel="stylesheet" href="./style/admin/util.css">
+   <link href="https://fonts.googleapis.com/css?family=Karla&display=swap" rel="stylesheet">
+   <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script> -->
+</head>
+<body>
+
+   <section id="controls">
+      <div class="control all tab" onclick="showBooks('all')">Lista libri</div>
+      <div class="control wish tab" onclick="showBooks('wish')">Lista dei Desideri</div>
+      <div class="control books" onclick="showReservations();">Prenotazioni attive</div>
+      <!-- <div class="control wish tab" opens="wish">Lista utenti</div> -->
+      <br>
+      <br>
+      <div class="hidden level3 control" onclick="openSideMenu('utente')">Nuovo utente</div>
+      <div class="hidden level3 control users" onclick="showUsers()">Lista utenti</div>
+      <br>
+      <br>
+      <div class="control back red" onclick="window.location.href = '/index.html'">Torna indietro</div>
+   </section>
+
+   <!-- <section id="login">
+      <div class="message">Accedi</div>
+   </section> -->
+
+   <section id="screen">
+      <div class="reservations hidden">
+      </div>
+      <div class="container hidden">
+      </div>
+      <div class="book-container">
+      </div>
+
+   </section>
+
+   <section id="utente" class="interface">
+     <div class="avatar">
+        <div id="chars">#</div>
+     </div>
+     <ul class="details">
+      <li>
+         <span>Display:</span>
+         <br>
+         <input id="user_display" placeholder="Classe Cognome Nome">
+         <div class="hint">Il nome visualizzabile nell'app</div>
+      </li>
+      <li>
+         <span>Username:</span>
+         <br>
+         <input placeholder="cognome.nome" id="user_name" type="text">
+         <div class="hint">Il nome da inserire durante l'accesso</div>
+      </li>
+      <li>
+         <span>Password:</span>
+         <br>
+         <input id="user_pass" placeholder="*****" type="password">
+         <input type="button" value="👁‍🗨">
+         <div class="hint">La password da inserire durante l'accesso</div>
+      </li>
+     </ul>
+
+     <div class="actions">
+      <div class="button" onclick="generateUser()">Aggiungi</div>
+     </div>
+   </section>
+
+   <section id="libro" class="interface">
+      <img draggable="false" id="imgLib" src="" alt="" />
+      <ul class="details">
+         <li>
+            <span>Titolo</span>
+            <div>
+               <textarea name="" id="bTitle" disabled  rows="2"></textarea>
+               <input onclick="element('#bTitle').disabled = false; activateMod()" type="button" value="Abilita Modifica">
+            </div>
+         </li>
+         <li>
+            <span>Sottotitolo</span>
+            <div>
+               <textarea name="" id="bSub" disabled  rows="2"></textarea>
+               <input onclick="element('#bSub').disabled = false; activateMod()" type="button" value="Abilita Modifica">
+            </div>
+         </li>
+         <li>
+            <span>Autore</span>
+            <div>
+               <textarea name="" id="bAuth" disabled  rows="1"></textarea>
+               <input onclick="element('#bAuth').disabled = false; activateMod()" type="button" value="Abilita Modifica">
+            </div>
+         </li>
+         <li>
+            <span>Pagine</span>
+            <div>
+               <input type="number" disabled id="bPages">
+               <input onclick="element('#bPages').disabled = false; activateMod()" type="button" value="Abilita Modifica">
+            </div>
+         </li>
+         <li id="vCount" class="hidden">
+            <span>Volumi totali</span>
+            <div>
+               <input type="number" disabled id="bVolumes">
+               <input onclick="element('#bVolumes').disabled = false; activateMod()" type="button"
+                  value="Abilita Modifica">
+            </div>
+         </li>
+         <li>
+            <span>Stato:</span>
+            <div>Nei desideri</div>
+         </li>
+         <li>
+            <span>Descrizione</span>
+            <div>
+               <textarea name="" id="bDesc" disabled  rows="10"></textarea>
+               <input onclick="element('#bDesc').disabled = false; activateMod()" type="button" value="Abilita Modifica">
+            </div>
+         </li>
+      </ul>
+
+      <div class="actions">
+         <div class="button hidden" onclick="initTransfer()" id="transfer">Trasferisci</div>
+         <div class="button disabled" id="mod">Modifica</div>
+         <div class="button red" onclick="initDrop()">Elimina</div>
+      </div>
+   </section>
+
+   <section id="prenotazioni" class="interface">
+      <ul>
+         <!-- <li>
+            <img
+               src="https://books.google.it/books/content?id=4dvptppOG8MC&printsec=frontcover&img=1&zoom=1&edge=curl&imgtk=AFLRE70Gk9jylSQXFdk4TbTd55n_gz_WvZ_gn4ya5K5ktuvSYPBXdBHD3uKprQsLrpddYjpjZQTlpBAmidMtJK-fXkDViiiZPwGlXShuX3zjFr4qHXx_tcehbwrVqUnvjIVqqXB77OCq"
+               alt="">
+            <div class="isbn"><strong>Codice isbn:</strong><br>1111111111</div>
+            <div class="title"><strong>Titolo:</strong><br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores quisquam assumenda officia amet quaerat, mollitia unde eum! In, eius iusto?</div>
+            <div class="date"><strong>Data di prenotazione:</strong><br>6/6/2020</div>
+         </li> -->
+      </ul>
+   </section>
+
+   <div id="log-blur">
+      <span class="loader">Loading...</span>
+   </div>
+   <div id="bg" onclick="closeAllMenus()"></div>
+   <div id="screenBG"></div>
+
+   <script src="./script/private/access.js"></script>
+   <script src="./script/private/admin/db.js"></script>
+   <script src="./script/private/admin/adm.js"></script>
+   <script src="./script/private/admin/util.js"></script>
+</body>
+</html>

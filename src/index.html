@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Biblioteca Euganeo - Dashboard</title>
+
+  <link rel="stylesheet" href="./style/login.css">
+  <link rel="stylesheet" href="./style/main.css">
+  <link rel="stylesheet" href="./style/input-side.css">
+  <link href="https://fonts.googleapis.com/css?family=Karla&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <section id="login">
+    <input type="text" placeholder="username" id="user-name" />
+    <div class="user-hint uh1">Username del tuo account</div>
+    <input type="password" placeholder="* * * * *" id="user-pass" />
+    <div class="user-hint uh2">Password del tuo account</div>
+    <br>
+    <div class="control log-btn disabled">Accedi</div>
+  </section>
+
+  <section id="controls">
+    <div class="control all tab" opens="all">Lista libri</div>
+    <div class="control free tab" opens="free">Libri liberi</div>
+    <div class="control wish tab" opens="wish">Lista dei desideri</div>
+    <div class="control disabled" opens="none">Biblioteca virtuale</div>
+    <br>
+    <br>
+    <div class="control" onclick="openInterface(0)">Aggiungi libro</div>
+    <div class="control lettura disabled" onclick="void(0)">Le mie letture</div>
+    <div class="control red" onclick="logout();">Logout</div>
+    <br>
+    <br>
+    <div class="control admin" onclick="window.location.href = './admin.html'">Amministrazione</div>
+  </section>
+
+  <section id="screen">
+    <div class="book-container">
+    </div>
+  </section>
+
+  <section id="letture" class="interface">
+  </section>
+
+  <section id="lettura" class="interface">
+    <img draggable="false" id="imgLett"
+      src="..."
+      alt="...">
+    <ul class="details">
+      <li>
+        <span>Titolo</span>
+        <div id="titLett">...</div>
+      </li>
+      <li>
+        <span>Sottotitolo</span>
+        <div id="stLett">...</div>
+      </li>
+      <li>
+        <span>Autore</span>
+        <div id="autLett">...</div>
+      </li>
+      <li>
+        <span>Pagine</span>
+        <div id="pagLett">...</div>
+      </li>
+      <li>
+        <span>Data di prenotazione</span>
+        <div id="dateLett">...</div>
+      </li>
+      <li>
+        <span>Descrizione</span>
+        <div id="dsLett">...</div>
+      </li>
+
+    </ul>
+
+    <div class="actions">
+      <div class="button annLett">Restituisci</div>
+    </div>
+  </section>
+
+  <section id="libro" class="interface">
+    <img draggable="false" id="imgLib" src="" alt="" />
+    <ul class="details">
+      <li>
+        <span>Titolo</span>
+        <div id="titLib"></div>
+      </li>
+      <li>
+        <span>Sottotitolo</span>
+        <div id="stLib"></div>
+      </li>
+      <li>
+        <span>Autore</span>
+        <div id="autLib"></div>
+      </li>
+      <li>
+        <span>Pagine</span>
+        <div id="pagLib"></div>
+      </li>
+      <li>
+        <span>Stato:</span>
+        <div id="clLib">Libero</div>
+      </li>
+      <li>
+        <span>Descrizione</span>
+        <div id="dsLib"></div>
+      </li>
+
+    </ul>
+
+    <div class="actions alib">
+      <div id="btnLib" class="button">Prendi libro</div>
+    </div>
+  </section>
+
+  <section id="input" class="interface">
+    <input type="text" minlength="10" maxlength="13" placeholder="0000000000000" id="ISBN" />
+    <div class="hint">Inserisci il codice ISBN del libro</div>
+    <br>
+    <div class="control" onclick="fetchBook()">Aggiungi</div>
+  </section>
+
+
+  <div id="log-blur">
+     <span class="loader">Loading...</span>
+  </div>
+  <div id="bg" onclick="closeInterfaces()"></div>
+  <div id="screenBG"></div>
+
+
+  <script src="./script/main.js"></script>
+
+  <!-- Questi moduli non sono presenti nella versione Open Source, fanno parte del DATABASE privato, non possono essere di dominio pubblico -->
+  <script src="./script/private/access.js"></script>
+  <script src="./script/private/firebase-access.js"></script>
+  <script src="./script/private/login.js"></script>
+  <script src="./script/private/handler.js"></script>
+  <script src="./script/private/util.js"></script>
+</body>
+
+</html>

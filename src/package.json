@@ -1,0 +1,24 @@
+{
+   "name": "biblioteca-classi-5e",
+   "version": "beta0.2.58",
+   "main": "index.html",
+   "license": "MIT",
+   "window": {
+      "title": "Biblioteca Euganeo - Classi 5^AI 5^BE 5^BI",
+      "minwidth": 1280,
+      "minheight": 720,
+      "maxwidth": 1280,
+      "maxheight": 720,
+      "width": 1280,
+      "height": 720,
+      "position": "center",
+      "resizable": true,
+      "icon": "./res/icon/icon.png"
+   },
+   "dependencies": {
+      "axios": "^0.19.2",
+      "firebase": "^7.14.0",
+      "jquery": "^3.5.0",
+      "randexp": "^0.5.3"
+   }
+}

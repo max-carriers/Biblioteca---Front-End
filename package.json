@@ -1,0 +1,19 @@
+{
+  "devDependencies": {
+    "nw": "^0.46.0",
+    "nw-builder": "^3.5.7"
+  },
+  "scripts": {
+    "dev": "nw src/",
+    "build": "nwbuild --platforms win32 --buildDir build/ src/ --disable-devtools"
+  },
+  "name": "biblioteca-euganeo",
+  "version": "beta0.2.58",
+  "main": "index.js",
+  "author": "Vettori Massimo",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "axios": "^0.19.2"
+  }
+}
