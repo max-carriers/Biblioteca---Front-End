@@ -26,10 +26,6 @@
       <div class="control back red" onclick="window.location.href = '/index.html'">Torna indietro</div>
    </section>
 
-   <!-- <section id="login">
-      <div class="message">Accedi</div>
-   </section> -->
-
    <section id="screen">
       <div class="reservations hidden">
       </div>
@@ -37,7 +33,6 @@
       </div>
       <div class="book-container">
       </div>
-
    </section>
 
    <section id="utente" class="interface">
@@ -61,7 +56,7 @@
          <span>Password:</span>
          <br>
          <input id="user_pass" placeholder="*****" type="password">
-         <input type="button" value="👁‍🗨">
+         <input onclick="toggleVisibility()" id="toggle" type="button" value="👁‍🗨">
          <div class="hint">La password da inserire durante l'accesso</div>
       </li>
      </ul>
@@ -69,6 +64,43 @@
      <div class="actions">
       <div class="button" onclick="generateUser()">Aggiungi</div>
      </div>
+   </section>
+
+   <!-- Sezione in corso di sviluppo -->
+   <!-- Non appare per ora -->
+   <section id="mod_utente" class="interface">
+      <div class="avatar">
+         <div id="chars2">5VM</div>
+      </div>
+      <ul class="details">
+         <li>
+            <span>Display:</span>
+            <br>
+            <div class="edit"><span>5BI Vettori Massimo</span><button onclick="modifyUser('display')">Modifica</button></div>
+            <div class="hint">Il nome visualizzabile nell'app</div>
+         </li>
+         <li>
+            <span>Username:</span>
+            <br>
+            <div class="edit"><span>* * * * * * * * * * * * * * * * * * *</span><button onclick="modifyUser('user')">Modifica</button></div>
+            <div class="hint">Il nome da inserire durante l'accesso</div>
+         </li>
+         <li>
+            <span>Password:</span>
+            <br>
+            <div class="edit"><span class="edited">* * * * * * * * * * * * * * * * * * *</span><button onclick="modifyUser('pass')">Modifica</button></div>
+            <div class="hint">La password da inserire durante l'accesso</div>
+         </li>
+         <li class="disabled">
+            <span>email:</span>
+            <br>
+            <div class="edit"><span>utente@gmail.com</span><button disabled>Modifica</button></div>
+         </li>
+      </ul>
+   
+      <div class="actions">
+         <div class="button disabled" id="userMod" onclick="generateUser()">Aggiungi</div>
+      </div>
    </section>
 
    <section id="libro" class="interface">

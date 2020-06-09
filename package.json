@@ -8,7 +8,7 @@
     "build": "nwbuild --platforms win32 --buildDir build/ src/ --disable-devtools"
   },
   "name": "biblioteca-euganeo",
-  "version": "beta0.2.58",
+  "version": "beta0.2.59",
   "main": "index.js",
   "author": "Vettori Massimo",
   "license": "MIT",
