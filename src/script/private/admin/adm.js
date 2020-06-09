@@ -65,7 +65,7 @@ function generateUser() {
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 function openSideMenu(id) {
-   let all = ["utente", "libro", "prenotazioni"];
+   let all = ["utente", "libro", "prenotazioni", "mod_utente"];
    if (all.indexOf(id) == -1) return;
    // closeAllMenus();
    element("#"+id).style.transform = "translateX(0vw)";
@@ -76,7 +76,7 @@ function openSideMenu(id) {
 }
 ////////////////////////////////////////////////////////////////////////////////
 function closeAllMenus() {
-   let all = ["utente", "libro", "prenotazioni"];
+   let all = ["utente", "libro", "prenotazioni", "mod_utente"];
    for (let m in all) element("#"+all[m]).style.transform = "translateX(-30vw)";
    let blur = element("#bg");
    blur.style.visibility = "hidden";
@@ -326,9 +326,19 @@ function openUser(e) {
          if (e.path[elm].classList.contains("user")) target = e.path[elm];
    }
    if (target == null) return;
-   console.log(target.getAttribute('uuid'));
+   
 };
-
+////////////////////////////////////////////////////////////////////////////////
+function toggleVisibility() {
+   let psw = element("#user_pass");
+   if (psw.type === "text") {
+      element("#toggle").value = "👁‍🗨";
+      psw.type = "password";
+   } else {
+      element("#toggle").value = "🔐";
+      psw.type = "text";
+   }
+}
 
 
 
