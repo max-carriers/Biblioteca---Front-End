@@ -7,6 +7,7 @@ function activateMod() {
 }
 
 // Non completamente implementata
+// Il funzionamento e` stato bloccato
 function activateUserMod() {
    return;
    let modBtn = element("#userMod");
@@ -15,6 +16,7 @@ function activateUserMod() {
 }
 
 // Non completamente implementata
+// Il funzionamento e` stato bloccato
 function modifyUser(param) {
    return;
    let params = {display: "NOME", user: "USERNAME", pass: "PASSWORD"};
